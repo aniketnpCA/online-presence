@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aniket Patil | Semiconductors & AI </title>
+    <title>Aniket Patil | Semiconductors & AI Infrastructure</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
-        /* Base Styles */
+        /* Enhanced Base Styles */
         :root {
             --primary-color: #1e3a5f;
             --secondary-color: #3498db;
@@ -16,6 +16,9 @@
             --medium-gray: #e9ecef;
             --dark-gray: #6c757d;
             --highlight: #1abc9c;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --danger: #e74c3c;
         }
         
         * {
@@ -29,12 +32,17 @@
             line-height: 1.6;
             color: var(--text-color);
             background-color: white;
+            overflow-x: hidden;
+        }
+        
+        html {
+            scroll-behavior: smooth;
         }
         
         a {
             text-decoration: none;
             color: var(--secondary-color);
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
         }
         
         a:hover {
@@ -48,14 +56,17 @@
             padding: 0 20px;
         }
         
-        /* Header */
+        /* Enhanced Header */
         header {
-            background-color: white;
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            transition: all 0.3s ease;
         }
         
         .header-content {
@@ -67,7 +78,7 @@
         
         .logo {
             font-size: 24px;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--primary-color);
         }
         
@@ -83,19 +94,22 @@
         nav ul li a {
             color: var(--primary-color);
             font-weight: 500;
-            padding-bottom: 5px;
-            border-bottom: 2px solid transparent;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
         }
         
         nav ul li a:hover {
-            border-bottom: 2px solid var(--highlight);
+            background: linear-gradient(135deg, var(--secondary-color), var(--highlight));
+            color: white;
+            transform: translateY(-2px);
         }
         
-        /* Hero Section */
+        /* Enhanced Hero Section */
         .hero {
             padding: 180px 0 100px;
-            background: linear-gradient(135deg, var(--light-gray) 0%, #ffffff 100%);
-            margin-bottom: 60px;
+            background: linear-gradient(135deg, var(--light-gray) 0%, #ffffff 50%, var(--light-gray) 100%);
+            margin-bottom: 0;
             position: relative;
             overflow: hidden;
         }
@@ -104,6 +118,8 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            position: relative;
+            z-index: 2;
         }
         
         .hero-text {
@@ -127,19 +143,19 @@
         
         .btn {
             display: inline-block;
-            background-color: var(--secondary-color);
+            background: linear-gradient(135deg, var(--secondary-color), var(--highlight));
             color: white;
-            padding: 12px 30px;
-            border-radius: 5px;
-            font-weight: 500;
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-weight: 600;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
         
         .btn:hover {
-            background-color: var(--highlight);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(26, 188, 156, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(26, 188, 156, 0.3);
         }
         
         .profile-image {
@@ -152,17 +168,18 @@
         }
         
         .profile-image:hover {
-            transform: translateY(-10px);
+            transform: translateY(-10px) scale(1.02);
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
         }
         
-        /* Sections */
+        /* Enhanced Sections */
         section {
             padding: 80px 0;
+            position: relative;
         }
         
         section:nth-child(even) {
-            background-color: var(--light-gray);
+            background: linear-gradient(135deg, var(--light-gray) 0%, #ffffff 100%);
         }
         
         .section-heading {
@@ -187,49 +204,29 @@
             transform: translateX(-50%);
             width: 70px;
             height: 3px;
-            background-color: var(--highlight);
+            background: linear-gradient(90deg, var(--secondary-color), var(--highlight));
+            border-radius: 2px;
         }
         
-        /* About Section */
+        /* Enhanced About Section */
         .about-content {
             display: flex;
             align-items: flex-start;
             justify-content: space-between;
+            gap: 40px;
         }
         
         .about-text {
             flex: 1;
-            padding-right: 40px;
         }
         
-        .skills {
-            flex: 1;
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            line-height: 1.8;
         }
         
-        .skill-item {
-            margin-bottom: 25px;
-        }
-        
-        .skill-info {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-        
-        .progress-bar {
-            height: 10px;
-            background-color: var(--medium-gray);
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        
-        .progress {
-            height: 100%;
-            background-color: var(--highlight);
-            border-radius: 5px;
-        }
-        
-        /* Projects Section */
+        /* Enhanced Projects Grid */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -237,26 +234,27 @@
         }
         
         .project-card {
-            background-color: white;
-            border-radius: 10px;
+            background: white;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
+            position: relative;
         }
         
         .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
         }
         
         .project-img {
             height: 200px;
-            background-color: var(--medium-gray);
+            background: linear-gradient(135deg, var(--secondary-color), var(--highlight));
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--dark-gray);
-            font-size: 24px;
+            color: white;
+            font-size: 32px;
         }
         
         .project-info {
@@ -267,31 +265,36 @@
             font-size: 20px;
             margin-bottom: 10px;
             color: var(--primary-color);
+            font-weight: 600;
         }
         
         .project-category {
-            color: var(--dark-gray);
+            color: var(--highlight);
             font-size: 14px;
             margin-bottom: 15px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-
-        /* Publications Section */
+        
+        /* Enhanced Publications Section */
         .publications-list {
             margin-top: 30px;
         }
         
         .publication-item {
             margin-bottom: 30px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 25px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
+            border-left: 4px solid var(--highlight);
         }
         
         .publication-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transform: translateX(10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
         }
         
         .publication-title {
@@ -305,50 +308,146 @@
             font-size: 14px;
             color: var(--dark-gray);
             margin-bottom: 15px;
+            font-weight: 500;
         }
         
-        /* Travel Map Section */
-        .travel-map {
-            margin-top: 30px;
-            height: 500px;
-            width: 100%;
-            background-color: var(--light-gray);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        
+        /* Enhanced Travel Map Section */
         .map-container {
-            width: 100%;
-            height: 100%;
-            position: relative;
+            margin-top: 30px;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
         
         .map-controls {
-            margin-top: 20px;
             display: flex;
             flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+        
+        .map-control-group {
+            display: flex;
+            align-items: center;
             gap: 10px;
         }
         
+        .map-control-group label {
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+        
+        .country-input {
+            padding: 10px 15px;
+            border: 2px solid var(--medium-gray);
+            border-radius: 25px;
+            outline: none;
+            transition: all 0.3s ease;
+            min-width: 200px;
+        }
+        
+        .country-input:focus {
+            border-color: var(--highlight);
+            box-shadow: 0 0 0 3px rgba(26, 188, 156, 0.1);
+        }
+        
         .map-btn {
-            padding: 8px 15px;
-            background-color: var(--primary-color);
+            padding: 10px 20px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--highlight));
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 25px;
             cursor: pointer;
+            font-weight: 500;
             transition: all 0.3s ease;
         }
         
         .map-btn:hover {
-            background-color: var(--highlight);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(26, 188, 156, 0.3);
         }
         
-        /* Footer */
+        .map-btn.danger {
+            background: linear-gradient(135deg, var(--danger), #c0392b);
+        }
+        
+        .map-btn.secondary {
+            background: linear-gradient(135deg, var(--dark-gray), #5a6c7d);
+        }
+        
+        .world-map {
+            width: 100%;
+            height: 500px;
+            border: 2px solid var(--medium-gray);
+            border-radius: 15px;
+            overflow: hidden;
+            position: relative;
+            background: #f8f9fa;
+        }
+        
+        .map-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: var(--dark-gray);
+            font-size: 18px;
+            text-align: center;
+        }
+        
+        .visited-countries {
+            margin-top: 20px;
+        }
+        
+        .countries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .country-tag {
+            background: linear-gradient(135deg, var(--secondary-color), var(--highlight));
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+        
+        .country-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(26, 188, 156, 0.3);
+        }
+        
+        .remove-country {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+        
+        .remove-country:hover {
+            opacity: 1;
+        }
+        
+        /* Enhanced Footer */
         footer {
-            background-color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color) 0%, #2c3e50 100%);
             color: white;
             padding: 60px 0 30px;
+            position: relative;
+            overflow: hidden;
         }
         
         .footer-content {
@@ -356,6 +455,8 @@
             justify-content: space-between;
             flex-wrap: wrap;
             margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
         }
         
         .footer-col {
@@ -378,7 +479,7 @@
             left: 0;
             width: 40px;
             height: 2px;
-            background-color: var(--highlight);
+            background: linear-gradient(90deg, var(--highlight), var(--secondary-color));
         }
         
         .footer-col ul {
@@ -391,34 +492,37 @@
         
         .footer-col ul li a {
             color: #e0e0e0;
+            transition: all 0.3s ease;
         }
         
         .footer-col ul li a:hover {
             color: var(--highlight);
-            padding-left: 5px;
+            padding-left: 10px;
         }
         
         .social-links {
             display: flex;
             margin-top: 20px;
+            gap: 15px;
         }
         
         .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            margin-right: 10px;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             color: white;
             transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
         }
         
         .social-links a:hover {
-            background-color: var(--highlight);
-            transform: translateY(-5px);
+            background: var(--highlight);
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 25px rgba(26, 188, 156, 0.3);
         }
         
         .footer-bottom {
@@ -427,9 +531,11 @@
             text-align: center;
             font-size: 14px;
             color: #e0e0e0;
+            position: relative;
+            z-index: 2;
         }
         
-        /* Responsive */
+        /* Responsive Design */
         @media (max-width: 992px) {
             .hero-content {
                 flex-direction: column;
@@ -444,25 +550,21 @@
             .about-content {
                 flex-direction: column;
             }
-            
-            .about-text {
-                padding-right: 0;
-                margin-bottom: 40px;
-            }
         }
         
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
+                gap: 20px;
             }
             
             nav ul {
-                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
             }
             
             nav ul li {
-                margin-left: 15px;
-                margin-right: 15px;
+                margin: 5px 10px;
             }
             
             .hero {
@@ -475,6 +577,20 @@
             
             .section-heading h2 {
                 font-size: 30px;
+            }
+            
+            .map-controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .map-control-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .country-input {
+                min-width: auto;
             }
         }
     </style>
@@ -491,8 +607,6 @@
                         <li><a href="#about">About</a></li>
                         <li><a href="#expertise">Expertise</a></li>
                         <li><a href="#publications">Publications</a></li>
-                        <li><a href="#travels">Travels</a></li>
-                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -504,12 +618,12 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Hello, I'm Aniket Patil!</h1>
+                    <h1>Hello, I'm Aniket Patil.</h1>
                     <p>Co-lead of the AI Digital Infrastructure Center of Excellence at Boston Consulting Group. Based in San Francisco.</p>
-                    <a href="#contact" class="btn">Get In Touch</a>
+                    <a href="mailto:contact@aniketpatil.com" class="btn">Get In Touch</a>
                 </div>
-                <div class="hero-image">
-                    <img src="/images/aniket-patil.jpg" alt="Aniket Patil" class="profile-image">
+                <div class="profile-image-container">
+                    <img src="/api/placeholder/300/300" alt="Aniket Patil" class="profile-image" style="object-fit: cover;">
                 </div>
             </div>
         </div>
@@ -524,9 +638,12 @@
             <div class="about-content">
                 <div class="about-text">
                     <p>Welcome to my professional portfolio. I co-lead the AI Digital Infrastructure Center of Excellence at Boston Consulting Group, where I advise leading organizations in the semiconductor, AI, and data center industries.</p>
+                    
                     <p>Throughout my career, I've had the opportunity to work with diverse clients, helping them navigate the complex landscape of artificial intelligence infrastructure and semiconductor strategies. I believe in a data-driven approach to consulting that combines technical expertise with business acumen.</p>
-                    <p>I hold degrees from UC Berkeley and the University of Virginia, which have equipped me with a strong foundation in both technical and business domains.</p>
-                    <p>When I'm not working with clients, you can find me traveling and exploring new destinations around the world.</p>
+                    
+                    <p>I hold degrees from UC Berkeley and the University of Virginia, which have equipped me with a strong foundation in both technical and business domains. My work spans from strategic planning and market analysis to implementation of cutting-edge AI infrastructure solutions.</p>
+                    
+                    <p>When I'm not working with clients, you can find me traveling and exploring new destinations around the world, always seeking to understand different markets and technological ecosystems globally.</p>
                 </div>
             </div>
         </div>
@@ -541,27 +658,7 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="/api/placeholder/400/200" alt="Regional Ecosystems" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Regional Ecosystems</h3>
-                        <div class="project-category">Strategic Analysis</div>
-                        <p>Analyzing regional technology ecosystems and their competitive dynamics to identify strategic opportunities and partnerships.</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="/api/placeholder/400/200" alt="AI Infrastructure" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">AI Infrastructure</h3>
-                        <div class="project-category">Technology Strategy</div>
-                        <p>Helping organizations build and optimize their AI infrastructure, from hardware selection to deployment strategies that align with business objectives.</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-img">
-                        <img src="/api/placeholder/400/200" alt="Semiconductors" style="width: 100%; height: 100%; object-fit: cover;">
+                        <i class="fas fa-microchip"></i>
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">Semiconductors</h3>
@@ -571,12 +668,32 @@
                 </div>
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="/api/placeholder/400/200" alt="Data Centers" style="width: 100%; height: 100%; object-fit: cover;">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">AI Infrastructure</h3>
+                        <div class="project-category">Technology Strategy</div>
+                        <p>Helping organizations build and optimize their AI infrastructure, from hardware selection to deployment strategies that align with business objectives.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-server"></i>
                     </div>
                     <div class="project-info">
                         <h3 class="project-title">Data Centers</h3>
                         <div class="project-category">Infrastructure Planning</div>
                         <p>Developing strategies for efficient, scalable, and sustainable data center operations that meet the demands of modern AI and computing workloads.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3 class="project-title">Regional Ecosystems</h3>
+                        <div class="project-category">Strategic Analysis</div>
+                        <p>Analyzing regional technology ecosystems and their competitive dynamics to identify strategic opportunities and partnerships.</p>
                     </div>
                 </div>
             </div>
@@ -624,27 +741,8 @@
         </div>
     </section>
 
-    <!-- Travel Map Section -->
-    <section id="travels">
-        <div class="container">
-            <div class="section-heading">
-                <h2>My Travels</h2>
-            </div>
-            <p class="text-center" style="margin-bottom: 30px;">In my free time, I enjoy exploring new places around the world. Below is a map of countries I've visited so far.</p>
-            
-            <div class="travel-map">
-                <!-- Map will be embedded here -->
-                <iframe id="travel-map-iframe" src="https://www.fla-shop.com/visited-countries/?st=&vc=1abc9c&sc=ffffff&bc=1e3a5f&vn=visited&vg=visited" style="width:100%; height:100%; border:none;"></iframe>
-            </div>
-            
-            <p style="margin-top: 20px; text-align: center; font-style: italic; color: var(--dark-gray);">
-                This travel map is personally maintained and can only be updated by me. It serves as a visual record of my global explorations.
-            </p>
-        </div>
-    </section>
-
     <!-- Footer -->
-    <footer id="contact">
+    <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col">
@@ -653,17 +751,16 @@
                     <div class="social-links">
                         <a href="https://www.linkedin.com/in/aniketnpatil/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="mailto:aniket.patil@example.com"><i class="fas fa-envelope"></i></a>
+                        <a href="mailto:contact@aniketpatil.com"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
-                                    <div class="footer-col">
+                <div class="footer-col">
                     <h3>Navigation</h3>
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#expertise">Expertise</a></li>
                         <li><a href="#publications">Publications</a></li>
-                        <li><a href="#travels">Travels</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -688,7 +785,7 @@
                 
                 if (targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 70,
+                        top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
                 }
@@ -697,23 +794,37 @@
         
         // Header scroll effect
         const header = document.querySelector('header');
+        
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            const currentScrollY = window.scrollY;
+            
+            if (currentScrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.backdropFilter = 'blur(15px)';
             } else {
-                header.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.06)';
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
             }
         });
         
-        // Embed map button
-        document.getElementById('embed-map-btn').addEventListener('click', function() {
-            const embedCode = `<iframe src="${document.getElementById('travel-map-iframe').src}" style="width:100%; height:500px; border:none;"></iframe>`;
-            
-            // Copy to clipboard
-            navigator.clipboard.writeText(embedCode).then(function() {
-                alert('Map embed code copied to clipboard!');
-            }, function() {
-                alert('Failed to copy embed code. Please try again.');
+        // Add scroll animations for cards
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+        
+        // Initialize scroll animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.project-card, .publication-item');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+                observer.observe(card);
             });
         });
     </script>
